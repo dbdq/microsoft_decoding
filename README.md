@@ -41,9 +41,7 @@ To optimize GBMs, strategies explained in [here][9] and [here][10] were consulte
 
 Uncompress the data files in raw/ and simply run “tester.py” to read the training csv file, perform cross-validation and train classifiers. After the training is done, classifiers are saved into a single file, which needs to be uploaded as a bundle file to AzureML for testing. Please see the comments in the code (tester.py). For testing in AzureML, run the Python code defined in the “Execute Python Script” module of the experiment. This will output the result to the Web service output module.
 
-Many codes used here are part of my online Python BCI decoding package currently in development. 
-It can be downloaded from [here][11]. 
-
+Many codes used here are part of my real-time Python brain signal decoding package, which can be found [here][11].
 
   [1]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004660
   [2]: http://martinos.org/mne/dev/generated/mne.time_frequency.tfr_multitaper.html
@@ -55,4 +53,4 @@ It can be downloaded from [here][11].
   [8]: http://www.sciencedirect.com/science/article/pii/S0167947301000652
   [9]: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3885826/
   [10]: http://www.analyticsvidhya.com/blog/2016/02/complete-guide-parameter-tuning-gradient-boosting-gbm-python
-  [11]: https://c4science.ch/diffusion/1299/
+  [11]: https://github.com/dbdq/pycnbi/
