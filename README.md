@@ -1,5 +1,5 @@
-# Microsoft Brain Decoding competition
-## First Prize award
+## My approach to Microsoft Brain Decoding competition - First Prize award
+
 
 **How to run**
 
