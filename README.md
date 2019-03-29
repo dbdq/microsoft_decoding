@@ -1,11 +1,6 @@
 ## My approach to Microsoft Brain Decoding competition - First Prize award
 
 
-**How to run**
-
-Uncompress the data files in raw/ and run tester.py to automatically perform a cross validation and train models for each subject.
-
-
 **Background**
 
 Data acquisition method and protocol is published [here][1].
@@ -42,9 +37,9 @@ Once the features were computed, [Gradient Boosting Machines (GBM)][8] were trai
 To optimize GBMs, strategies explained in [here][9] and [here][10] were consulted while the number of decision trees was fixed to 1000. Although AzureML had lower scikit-learn version (0.15.1) than the latest (0.17.1) at the time of writing, the cross-validation results were identical. A K-Fold instead of randomized cross-validation was used to preserve the temporal distance between trials since the signals are more likely to be similar if their temporal proximity is lower, which may lead to an undesired boosted cross-validation accuracy. With K=6, the average cross-validation accuracy was 91.1%. My method achieved 92.5% in the final private test set.
 
 
-**Running the code**
+***Running the code***
 
-Simply running the Python code “tester.py” included in bundle.zip will read the training csv file, perform cross-validation and train classifiers. After the training is done, classifiers are saved into a single file, which needs to be uploaded as a bundle file to AzureML for testing. Please see the comments in the code (tester.py). For testing in AzureML, run the Python code defined in the “Execute Python Script” module of the experiment. This will output the result to the Web service output module.
+Uncompress the data files in raw/ and simply run “tester.py” to read the training csv file, perform cross-validation and train classifiers. After the training is done, classifiers are saved into a single file, which needs to be uploaded as a bundle file to AzureML for testing. Please see the comments in the code (tester.py). For testing in AzureML, run the Python code defined in the “Execute Python Script” module of the experiment. This will output the result to the Web service output module.
 
 Many codes used here are part of my online Python BCI decoding package currently in development. 
 It can be downloaded from [here][11]. 
