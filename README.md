@@ -1,7 +1,7 @@
 ## My approach to Microsoft Brain Decoding competition - First Prize award
 
 
-**Background**
+### Background
 
 Data acquisition method and protocol is published [here][1].
 
