@@ -1,0 +1,11 @@
+__pycache__
+.DS_Store
+.idea
+*~
+*.egg-info
+*.egg
+*.asv
+*.pyc
+*.pyo
+*.log
+*.swp
