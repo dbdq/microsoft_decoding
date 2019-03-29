@@ -43,7 +43,7 @@ Uncompress the data files in raw/ and simply run “tester.py” to read the tra
 
 Many codes used here are part of my real-time Python brain signal decoding package, which can be found [here][11].
 
-*** Kyuhwa Lee, 2016. ***
+***Kyuhwa Lee, 2016.***
 
   [1]: http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004660
   [2]: http://martinos.org/mne/dev/generated/mne.time_frequency.tfr_multitaper.html
