@@ -6,12 +6,12 @@
 Data acquisition method and protocol is published [here][1].
 
 
-**Overview of the method**
+### Overview of the method
 
 Two classifiers were trained per subject and the final decision was made by averaging class probabilities. To start with, a grand average of time-frequency representation (TFR) plots were computed to see the general trend. For this purpose, [mne.tfr_multitaper][2] function of [Python MNE library][3] was used.
 
 
-**Feature Computation**
+### Feature Computation
 
 Two types of features were used: 1) frequency-domain and 2) time-domain features. Once features are computed, feature importances were auotmatically ranked, i.e. no manual feature selection. Each classifier was trained separately from each domain of features. Throughout this document, “0 ms” denotes the time point when either face or house image was shown. All features were computed within each epoch. Since the classifer was able to efficiently deal with high dimensional features and feature importances were computed automatically during the training stage, no manual feature index selection was performed for both types of features. 
 
@@ -30,14 +30,14 @@ Based on TFR plots, roughly two groups of frequency ranges were defined: “Low�
 For Low-range filtering, a 2nd order low-pass Butterworth filter was used. For High-range filtering, a 4th order band-pass Butterworth filter was used, followed by a Hilbert transform and taking their absolute values. After applying filters, samples of only 200-400ms range were kept after filtering and they were downsampled to 200 Hz (1 out of every 5 samples) to reduce the computational burden. The samples from both Low and High ranges were concatenated to form a long feature vector. These vectors obtained from all channels were concatenated to finally form a time-domain feature vector, which represents a single trial.
 
 
-**Classification**
+### Classification
 
 Once the features were computed, [Gradient Boosting Machines (GBM)][8] were trained on these pre-computed features. Two GBMs were trained for each subject, one with frequency-domain features and another with time-domain features. The class probabilities computed from GBMs were averaged to make the final decision.
 
 To optimize GBMs, strategies explained in [here][9] and [here][10] were consulted while the number of decision trees was fixed to 1000. Although AzureML had lower scikit-learn version (0.15.1) than the latest (0.17.1) at the time of writing, the cross-validation results were identical. A K-Fold instead of randomized cross-validation was used to preserve the temporal distance between trials since the signals are more likely to be similar if their temporal proximity is lower, which may lead to an undesired boosted cross-validation accuracy. With K=6, the average cross-validation accuracy was 91.1%. My method achieved 92.5% in the final private test set.
 
 
-***Running the code***
+### Running the code
 
 Uncompress the data files in raw/ and simply run “tester.py” to read the training csv file, perform cross-validation and train classifiers. After the training is done, classifiers are saved into a single file, which needs to be uploaded as a bundle file to AzureML for testing. Please see the comments in the code (tester.py). For testing in AzureML, run the Python code defined in the “Execute Python Script” module of the experiment. This will output the result to the Web service output module.
 
