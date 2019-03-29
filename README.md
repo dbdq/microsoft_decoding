@@ -1,4 +1,5 @@
-# Microsoft Brain Decoding competition code - First Prize award
+# Microsoft Brain Decoding competition
+## First Prize award
 
 **How to run**
 
