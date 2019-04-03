@@ -13,7 +13,7 @@ Two classifiers were trained per subject and the final decision was made by aver
 
 ### Feature Computation
 
-Two types of features were used: 1) frequency-domain and 2) time-domain features, where a data-driven feature importance ranking was used, i.e. no manual feature index selection. Each classifier was trained separately from each domain of features. Throughout this document, “0 ms” denotes the time point when either face or house image was shown. All features were computed within each epoch. Since the classifer was able to efficiently deal with high dimensional features and feature importances were computed automatically during the training stage, no manual feature index selection was performed for both types of features. 
+Two types of features were used: 1) frequency-domain and 2) time-domain features. A fully data-driven feature importance ranking was used, i.e. no hand-picked feature index selection. Each classifier was trained separately from each domain of features. Throughout this document, “0 ms” denotes the time point when either face or house image was shown. All features were computed within each epoch. Since the classifer was able to efficiently deal with high dimensional features and feature importances were computed automatically during the training stage, no manual feature index selection was performed for both types of features. 
 
 **1) Frequency-domain features**
 
