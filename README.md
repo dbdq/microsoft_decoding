@@ -8,7 +8,7 @@ Data acquisition method and protocol is published [here][1].
 
 ### Overview of the method
 
-Two classifiers were trained per subject and the final decision was made by averaging class probabilities. To start with, a grand average of time-frequency representation (TFR) plots were computed to see the general trend. For this purpose, [mne.tfr_multitaper][2] function of [Python MNE library][3] was used.
+Two classifiers were trained per subject and the final decision was made by averaging class probabilities. To start with, a grand average of time-frequency representation (TFR) plots were visualized to see the general trend. For this purpose, [mne.tfr_multitaper][2] function of [Python MNE library][3] was used.
 
 
 ### Feature Computation
